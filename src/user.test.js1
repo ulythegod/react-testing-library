@@ -1,0 +1,47 @@
+// import React from "react";
+// import { render, unmountComponentAtNode } from "react-dom";
+// import {createRoot} from "react-dom/client";
+// import { act } from "react-dom/test-utils";
+// import User from "./user";
+
+// let container = null;
+// beforeEach(() => {
+//     //подготавливаем дом-элемент, куда будем рендерить
+//     container = document.createElement("div");
+//     document.body.appendChild(container);
+// });
+
+// afterEach(() => {
+//     //очистка после завершения
+//     unmountComponentAtNode(container);
+//     container.remove();
+//     container = null;
+// });
+
+// it("renders user data", async () => {
+//     const fakeUser = {
+//         name: "Joni Baez",
+//         age: "32",
+//         adress: "123, Charming Avenue"
+//     };
+//     jest.spyOn(global, "fetch").mockImplementation(() =>
+//         Promise.resolve({
+//             json: () => Promise.resolve(fakeUser)
+//         })
+//     )
+
+//     //используем act асинхронно, чтобы передавать успешно завершенные промисы
+//     await act(async () => {
+//         const root = createRoot(container);
+//         root.render(<User id="123" />);
+//     });
+
+//     expect(container.querySelector("summary").textContent).toBe(fakeUser.name);
+
+//     expect(container.querySelector("strong").textContent).toBe(fakeUser.age);
+
+//     expect(container.querySelector("span").textContent).toBe("lives in " + fakeUser.adress);
+
+//     //выключаем фиктивный fetch чтобы убедиться, что тесты полностью изолированы
+//     global.fetch.mockRestore();
+// })

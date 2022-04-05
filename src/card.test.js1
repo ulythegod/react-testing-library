@@ -1,0 +1,61 @@
+// //Таймеры
+
+// import React from "react";
+// import { render, unmountComponentAtNode } from "react-dom";
+// import { act } from "react-dom/test-utils";
+// import {createRoot} from "react-dom/client";
+// import pretty from "pretty";
+
+// import Card from "./card";
+
+// let container = null;
+// beforeEach(() => {
+//     //подготавливаем дом-элемент, куда будем рендерить
+//     container = document.createElement("div");
+//     document.body.appendChild(container);
+//     jest.useFakeTimers();
+// });
+
+// afterEach(() => {
+//     //очищаем после завершения
+//     unmountComponentAtNode(container);
+//     container.remove();
+//     container = null;
+//     jest.useRealTimers();
+// });
+
+// it("should select null after timing out", () => {
+//     const onSelect = jest.fn();
+//     act(() => {
+//         let root = createRoot(container);
+//         root.render(<Card onSelect={onSelect} />)
+//     });
+
+//     //двигаемся вперед по времени на 100 мс
+//     act(() => {
+//         jest.advanceTimersByTime(100);
+//     });
+//     expect(onSelect).not.toHaveBeenCalled();
+
+//     //теперь двигаемся еще на 5 секунд
+//     act(() => {
+//         jest.advanceTimersByTime(5000);
+//     });
+//     expect(onSelect).toHaveBeenCalledWith(null);
+// });
+
+// it("should accept selections", () => {
+//     const onSelect = jest.fn();
+//     act(() => {
+//         let root = createRoot(container);
+//         root.render(<Card onSelect={onSelect} />);
+//     });
+
+//     act(() => {
+//         container
+//             .querySelector("[data-testid='2']")
+//             .dispatchEvent(new MouseEvent("click", { bubbles: true }));
+//     });
+
+//     expect(onSelect).toHaveBeenCalledWith(2);
+// })

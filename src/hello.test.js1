@@ -1,0 +1,70 @@
+// import React from "react";
+// import { render, unmountComponentAtNode } from "react-dom";
+// import { act } from "react-dom/test-utils";
+// import pretty from "pretty";
+// import {createRoot} from "react-dom/client";
+
+// import Hello from "./Hello";
+
+// let container = null;
+// beforeEach(() => {
+//     //подготавливаем DOM-элемент, куда будем рендерить
+//     container = document.createElement("div");
+//     document.body.appendChild(container);
+// });
+
+// afterEach(() => {
+//     //очистка после завершения
+//     unmountComponentAtNode(container);
+//     container.remove();
+//     container = null;
+// });
+
+// // it("renders with or without a name", () => {
+// //     act(() => {
+// //         const root = createRoot(container);
+// //         root.render(<Hello />);
+// //     });
+// //     expect(container.textContent).toBe("Hey, stranger!");
+
+// //     act(() => {
+// //         const root = createRoot(container);
+// //         root.render(<Hello name="Jenny" />);
+// //     });
+// //     expect(container.textContent).toBe("Hello, Jenny!");
+
+// //     act(() => {
+// //         const root = createRoot(container);
+// //         root.render(<Hello name="Sierra" />);
+// //     });
+// //     expect(container.textContent).toBe("Hello, Sierra!");
+// // });
+
+// // it("should render a greeting", () => {
+// //     act(() => {
+// //         const root = createRoot(container);
+// //         root.render(<Hello />);
+// //     });
+
+// //     expect(
+// //         pretty(container.innerHTML)
+// //     ).toMatchInlineSnapshot();
+
+// //     act(() => {
+// //         let root = createRoot(container);
+// //         root.render(<Hello name="Jenny" />);
+// //     });
+
+// //     expect(
+// //         pretty(container.innerHTML)
+// //     ).toMatchInlineSnapshot();
+    
+// //     act(() => {
+// //         let root = createRoot(container);
+// //         root.render(<Hello name="Margaret" />);
+// //     });
+
+// //     expect(
+// //         pretty(container.innerHTML)
+// //     ).toMatchInlineSnapshot();
+// // });
