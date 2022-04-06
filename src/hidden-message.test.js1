@@ -1,0 +1,24 @@
+// //этот импорт - это что, что вы обычно конфигурируете в jest для автоматического импорта
+// import '@testing-library/jest-dom'
+// //! jest-dom добавляет удобные операторы (assertion) в Jest и это рекомендуется, но требуется
+
+// import * as React from 'react'
+// import {render, fireEvent, screen} from '@testing-library/react'
+// import HiddenMessage from './hidden-message'
+
+// test('shows the children when the checkbox is checked', () => {
+//     const testMessage = 'Test Message';
+//     render(<HiddenMessage>{testMessage}</HiddenMessage>)
+
+//     //query* функции будут возвращать элемент или null, если он не будет найден
+//     //get* функции будут возвращать элемент или выбрасывать ошибку, если ничего не будет найдено
+//     expect(screen.queryByText(testMessage)).toBeNull()
+
+//     //query* функции могут принимать регулярные выражения для того, чтобы 
+//     //сделать селекторы более устойчивыми к изменению контента
+//     fireEvent.click(screen.getByLabelText(/show/i));
+
+//     //.toBeInTheDocument() это assertion, который берется из jest-dom
+//     //вместо него еще можно использовать .toBeDefined()
+//     expect(screen.getByText(testMessage)).toBeInTheDocument()
+// })

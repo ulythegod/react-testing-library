@@ -1,0 +1,75 @@
+// //снова два этих импорта это то, что вчегда нужно добавлять
+// //в конфигурацию вашего тестирующего фреймворка, вместо того, чтобы импортировать в каждом файле
+// import '@testing-library/jest-dom'
+// import * as React from 'react'
+// //импорт функций пародирующего API из Mock Service Worker
+// import {rest} from 'msw'
+// import {setupServer} from 'msw/node'
+// //импорт функций тестирования
+// import {render, fireEvent, screen} from '@testing-library/react'
+// import Login from './login'
+
+// const fakeUserResponse = {token: 'fake_user_token'}
+// const server = setupServer(
+//     rest.post('api/login', (req, res, ctx) => {
+//         return res(ctx.json(fakeUserResponse))
+//     })
+// )
+
+// beforeAll(() => server.listen())
+// afterEach(() => {
+//     server.resetHandlers()
+//     window.localStorage.removeItem('token')
+// })
+// afterAll(() => server.close())
+
+// test('allows the user to login successfully', async () => {
+//     render(<Login />)
+
+//     //заполнение формы
+//     fireEvent.change(screen.getByLabelText(/username/i), {
+//         target: {value: 'chuck'},
+//     })
+//     fireEvent.change(screen.getByLabelText(/password/i), {
+//         target: {value: 'norris'}
+//     })
+
+//     fireEvent.click(screen.getByText(/submit/i))
+
+//     //прямо как при ручном тестировании, мы говорим нашему тесту ждать alert
+//     //перед тем как продолжить с assertions
+//     const alert = await screen.findByRole('alert')
+
+//     //.toHaveTextContent() берется из jest-dom assertions
+//     //также можно использовать expect(alert.textContent).toMatch(/congrats/i)
+//     //но jest-dom дает лучшие сообщения об ошибках, поэтому он рекомендуется
+//     expect(alert).toHavetextContent(/congrats/i)
+//     expect(window.localStorage.getItem('token')).toEqual(fakeUserResponse)
+// })
+
+// test('handles server exceptions', async () => {
+//     //поддельный ответ сервера с ошибкой длтя этого теста
+//     server.use(
+//         rest.post('api/login', (req, res, ctx) => {
+//             return res(cts.status(500), ctx.json({message: 'Internal server error'}))
+//         })
+//     )
+
+//     render(<Login />)
+
+//     //заполнение формы
+//     fireEvent.change(screen.getByLabelText(/username/i), {
+//         target: {value: 'chuck'},
+//     })
+//     fireEvent.change(screen.getByLabelText(/password/i), {
+//       target: {value: 'norris'},
+//     })
+
+//     fireEvent.click(screen.getByText(/submit/i))
+
+//     //ожидание сообщения об ошибке
+//     const alert = await screen.findByRole('alert')
+
+//     expect(alert).toHavetextContent(/internal server error/i)
+//     expect(window.localStorage.getItem('token')).toBeNull()
+// })
