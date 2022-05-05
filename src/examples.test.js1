@@ -10,7 +10,7 @@
 // //Text with prop value is rendered
 // it('render personalized greeting', async () => {
 //     //рендеринг новой сущности в каждом тесте, для предотвращения утечки состояния
-//     const {getByText} = render(<HelloMessage name="Elon" />);
+//     const {getByText} = render(<Hello Message name="Elon" />);
 
 //     await waitFor(() => getByText(/hello Elon/i))
 // })
